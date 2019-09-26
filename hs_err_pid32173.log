@@ -1,0 +1,1157 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 262144 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2767), pid=32173, tid=0x00007f50517a8700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_222-b10) (build 1.8.0_222-b10)
+# Java VM: OpenJDK 64-Bit Server VM (25.222-b10 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f504804c800):  JavaThread "main" [_thread_in_vm, id=32174, stack(0x00007f50516a9000,0x00007f50517a9000)]
+
+Stack: [0x00007f50516a9000,0x00007f50517a9000],  sp=0x00007f50517a4450,  free space=1005k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xb71202]
+V  [libjvm.so+0x500237]
+V  [libjvm.so+0x9325e0]
+V  [libjvm.so+0x9296fe]
+V  [libjvm.so+0xb6d9d0]
+V  [libjvm.so+0x8a67b9]
+V  [libjvm.so+0x8a8b8f]
+V  [libjvm.so+0x8a948b]
+V  [libjvm.so+0x8a9f05]
+V  [libjvm.so+0x4ec18a]
+V  [libjvm.so+0x8b0848]
+V  [libjvm.so+0x4552f7]
+V  [libjvm.so+0x4566dc]
+V  [libjvm.so+0x4585af]
+V  [libjvm.so+0xad893c]
+V  [libjvm.so+0x6ff05c]
+V  [libjvm.so+0x700a9b]  JVM_DefineClassWithSource+0x8b
+C  [libjava.so+0xddbd]  Java_java_lang_ClassLoader_defineClass1+0x17d
+J 266  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x00007f50391bb64b [0x00007f50391bb540+0x10b]
+J 251 C1 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; (43 bytes) @ 0x00007f50391ae214 [0x00007f50391adc40+0x5d4]
+J 223 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x00007f503918810c [0x00007f50391865c0+0x1b4c]
+J 170 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00007f503916b90c [0x00007f503916b660+0x2ac]
+J 133 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00007f503915c40c [0x00007f503915c380+0x8c]
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x6b796a]
+V  [libjvm.so+0x70f660]  JVM_DoPrivileged+0x550
+J 121  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00007f5039154115 [0x00007f5039154040+0xd5]
+J 132 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00007f503915bb84 [0x00007f503915ba00+0x184]
+J 92 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00007f503914349c [0x00007f5039142b40+0x95c]
+J 150 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00007f503916384c [0x00007f5039162ec0+0x98c]
+J 149 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00007f50391642c4 [0x00007f50391641c0+0x104]
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x6b796a]
+V  [libjvm.so+0x6b4f4b]
+V  [libjvm.so+0x6b55b4]
+V  [libjvm.so+0xadf484]
+V  [libjvm.so+0xaddcd9]
+V  [libjvm.so+0xadfd6c]
+V  [libjvm.so+0x4eee07]
+V  [libjvm.so+0x6a4922]
+j  com.sun.tools.javac.comp.Flow.analyzeTree(Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/tree/TreeMaker;)V+25
+j  com.sun.tools.javac.main.JavaCompiler.flow(Lcom/sun/tools/javac/comp/Env;Ljava/util/Queue;)V+243
+j  com.sun.tools.javac.main.JavaCompiler.flow(Lcom/sun/tools/javac/comp/Env;)Ljava/util/Queue;+11
+j  com.sun.tools.javac.main.JavaCompiler.compile2()V+180
+j  com.sun.tools.javac.main.JavaCompiler.compile(Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)V+165
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;[Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+1299
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;)Lcom/sun/tools/javac/main/Main$Result;+15
+j  com.sun.tools.javac.Main.compile([Ljava/lang/String;)I+12
+j  com.sun.tools.javac.Main.main([Ljava/lang/String;)V+1
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x6b796a]
+V  [libjvm.so+0x6de907]
+V  [libjvm.so+0x6e13c3]
+C  [libjli.so+0x3726]
+C  [libpthread.so.0+0x754b]  start_thread+0xdb
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 266  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class; (0 bytes) @ 0x00007f50391bb5d1 [0x00007f50391bb540+0x91]
+J 251 C1 java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class; (43 bytes) @ 0x00007f50391ae214 [0x00007f50391adc40+0x5d4]
+J 223 C1 java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class; (142 bytes) @ 0x00007f503918810c [0x00007f50391865c0+0x1b4c]
+J 170 C1 java.net.URLClassLoader$1.run()Ljava/lang/Class; (63 bytes) @ 0x00007f503916b90c [0x00007f503916b660+0x2ac]
+J 133 C1 java.net.URLClassLoader$1.run()Ljava/lang/Object; (5 bytes) @ 0x00007f503915c40c [0x00007f503915c380+0x8c]
+v  ~StubRoutines::call_stub
+J 121  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object; (0 bytes) @ 0x00007f50391540a3 [0x00007f5039154040+0x63]
+J 132 C1 java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class; (47 bytes) @ 0x00007f503915bb84 [0x00007f503915ba00+0x184]
+J 92 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (122 bytes) @ 0x00007f503914349c [0x00007f5039142b40+0x95c]
+J 150 C1 sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class; (85 bytes) @ 0x00007f503916384c [0x00007f5039162ec0+0x98c]
+J 149 C1 java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; (7 bytes) @ 0x00007f50391642c4 [0x00007f50391641c0+0x104]
+v  ~StubRoutines::call_stub
+j  com.sun.tools.javac.comp.Flow.analyzeTree(Lcom/sun/tools/javac/comp/Env;Lcom/sun/tools/javac/tree/TreeMaker;)V+25
+j  com.sun.tools.javac.main.JavaCompiler.flow(Lcom/sun/tools/javac/comp/Env;Ljava/util/Queue;)V+243
+j  com.sun.tools.javac.main.JavaCompiler.flow(Lcom/sun/tools/javac/comp/Env;)Ljava/util/Queue;+11
+j  com.sun.tools.javac.main.JavaCompiler.compile2()V+180
+j  com.sun.tools.javac.main.JavaCompiler.compile(Lcom/sun/tools/javac/util/List;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)V+165
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;[Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+1299
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;Lcom/sun/tools/javac/util/List;Ljava/lang/Iterable;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;Lcom/sun/tools/javac/util/Context;)Lcom/sun/tools/javac/main/Main$Result;+7
+j  com.sun.tools.javac.main.Main.compile([Ljava/lang/String;)Lcom/sun/tools/javac/main/Main$Result;+15
+j  com.sun.tools.javac.Main.compile([Ljava/lang/String;)I+12
+j  com.sun.tools.javac.Main.main([Ljava/lang/String;)V+1
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f5048120800 JavaThread "Service Thread" daemon [_thread_blocked, id=32181, stack(0x00007f504cdd1000,0x00007f504ced2000)]
+  0x00007f5048115000 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=32180, stack(0x00007f504ced3000,0x00007f504cfd3000)]
+  0x00007f5048106800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=32179, stack(0x00007f504cfd4000,0x00007f504d0d4000)]
+  0x00007f5048104800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=32178, stack(0x00007f504d0d4000,0x00007f504d1d5000)]
+  0x00007f50480db000 JavaThread "Finalizer" daemon [_thread_blocked, id=32177, stack(0x00007f504d1d5000,0x00007f504d2d6000)]
+  0x00007f50480d6800 JavaThread "Reference Handler" daemon [_thread_blocked, id=32176, stack(0x00007f504d2d6000,0x00007f504d3d7000)]
+=>0x00007f504804c800 JavaThread "main" [_thread_in_vm, id=32174, stack(0x00007f50516a9000,0x00007f50517a9000)]
+
+Other Threads:
+  0x00007f50480cc800 VMThread [stack: 0x00007f504d3d8000,0x00007f504d4d8000] [id=32175]
+  0x00007f5048123000 WatcherThread [stack: 0x00007f504ccd1000,0x00007f504cdd1000] [id=32182]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000f0a00000, size: 246 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ def new generation   total 3584K, used 1852K [0x00000000f0a00000, 0x00000000f0de0000, 0x00000000f5c00000)
+  eden space 3200K,  57% used [0x00000000f0a00000, 0x00000000f0bcf2f0, 0x00000000f0d20000)
+  from space 384K,   0% used [0x00000000f0d20000, 0x00000000f0d20000, 0x00000000f0d80000)
+  to   space 384K,   0% used [0x00000000f0d80000, 0x00000000f0d80000, 0x00000000f0de0000)
+ tenured generation   total 7832K, used 4698K [0x00000000f5c00000, 0x00000000f63a6000, 0x0000000100000000)
+   the space 7832K,  59% used [0x00000000f5c00000, 0x00000000f6096a88, 0x00000000f6096c00, 0x00000000f63a6000)
+ Metaspace       used 8325K, capacity 8820K, committed 8960K, reserved 1056768K
+  class space    used 913K, capacity 944K, committed 1024K, reserved 1048576K
+
+Card table byte_map: [0x00007f50515e3000,0x00007f505165f000] byte_map_base: 0x00007f5050e5e000
+
+Polling page: 0x00007f50517b4000
+
+CodeCache: size=245760Kb used=2218Kb max_used=2218Kb free=243541Kb
+ bounds [0x00007f5039000000, 0x00007f5039270000, 0x00007f5048000000]
+ total_blobs=760 nmethods=467 adapters=208
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 1.183 Thread 0x00007f5048115000  345       3       java.util.HashMap::resize (359 bytes)
+Event: 1.184 Thread 0x00007f5048115000 nmethod 345 0x00007f50391ef3d0 code [0x00007f50391ef620, 0x00007f50391f0848]
+Event: 1.192 Thread 0x00007f5048115000  348       3       com.sun.tools.javac.file.RelativePath::equals (24 bytes)
+Event: 1.192 Thread 0x00007f5048115000 nmethod 348 0x00007f50391f0f90 code [0x00007f50391f1120, 0x00007f50391f1568]
+Event: 1.194 Thread 0x00007f5048115000  350       1       java.util.HashMap::afterNodeInsertion (1 bytes)
+Event: 1.194 Thread 0x00007f5048115000 nmethod 350 0x00007f50391f1690 code [0x00007f50391f17e0, 0x00007f50391f18f0]
+Event: 1.202 Thread 0x00007f5048115000  352       2       java.util.LinkedHashMap$LinkedHashIterator::hasNext (13 bytes)
+Event: 1.202 Thread 0x00007f5048115000 nmethod 352 0x00007f50391f2e50 code [0x00007f50391f2fa0, 0x00007f50391f3110]
+Event: 1.202 Thread 0x00007f5048115000  353       2       java.util.LinkedHashMap$LinkedKeyIterator::next (8 bytes)
+Event: 1.202 Thread 0x00007f5048115000 nmethod 353 0x00007f50391f3190 code [0x00007f50391f3300, 0x00007f50391f3488]
+Event: 1.202 Thread 0x00007f5048115000  354       2       com.sun.tools.javac.file.RelativePath$RelativeDirectory::basename (44 bytes)
+Event: 1.202 Thread 0x00007f5048115000 nmethod 354 0x00007f50391f3550 code [0x00007f50391f36c0, 0x00007f50391f38b8]
+Event: 1.202 Thread 0x00007f5048115000  355       2       java.util.LinkedHashMap$LinkedHashIterator::nextNode (54 bytes)
+Event: 1.202 Thread 0x00007f5048115000 nmethod 355 0x00007f50391f3a10 code [0x00007f50391f3ba0, 0x00007f50391f3e58]
+Event: 1.205 Thread 0x00007f5048115000  357       2       java.util.ComparableTimSort::countRunAndMakeAscending (123 bytes)
+Event: 1.205 Thread 0x00007f5048115000 nmethod 357 0x00007f50391f3fd0 code [0x00007f50391f41a0, 0x00007f50391f47e8]
+Event: 1.205 Thread 0x00007f5048115000  358       2       java.util.ComparableTimSort::binarySort (223 bytes)
+Event: 1.206 Thread 0x00007f5048115000 nmethod 358 0x00007f50391f4c90 code [0x00007f50391f4e40, 0x00007f50391f5458]
+Event: 1.207 Thread 0x00007f5048115000  361 %     3       java.util.ComparableTimSort::binarySort @ 72 (223 bytes)
+Event: 1.207 Thread 0x00007f5048115000 nmethod 361% 0x00007f50391f5890 code [0x00007f50391f5a80, 0x00007f50391f6618]
+Event: 1.207 Thread 0x00007f5048115000  362       3       java.util.ComparableTimSort::binarySort (223 bytes)
+Event: 1.208 Thread 0x00007f5048115000 nmethod 362 0x00007f50391f6c10 code [0x00007f50391f6e00, 0x00007f50391f78d8]
+Event: 1.208 Thread 0x00007f5048115000  363       2       java.util.ComparableTimSort::gallopRight (327 bytes)
+Event: 1.208 Thread 0x00007f5048115000 nmethod 363 0x00007f50391f7d50 code [0x00007f50391f7f20, 0x00007f50391f84f8]
+Event: 1.209 Thread 0x00007f5048115000  364       2       java.util.ComparableTimSort::pushRun (31 bytes)
+Event: 1.209 Thread 0x00007f5048115000 nmethod 364 0x00007f50391f8950 code [0x00007f50391f8ac0, 0x00007f50391f8c70]
+Event: 1.209 Thread 0x00007f5048115000  365       2       java.util.ComparableTimSort::mergeCollapse (101 bytes)
+Event: 1.209 Thread 0x00007f5048115000 nmethod 365 0x00007f50391f8dd0 code [0x00007f50391f8f60, 0x00007f50391f9238]
+Event: 1.211 Thread 0x00007f5048115000  366       2       java.util.ComparableTimSort::mergeAt (356 bytes)
+Event: 1.212 Thread 0x00007f5048115000 nmethod 366 0x00007f50391f9450 code [0x00007f50391f9620, 0x00007f50391f9ab8]
+Event: 1.213 Thread 0x00007f5048115000  367       2       java.util.ComparableTimSort::gallopLeft (327 bytes)
+Event: 1.213 Thread 0x00007f5048115000 nmethod 367 0x00007f50391f9f10 code [0x00007f50391fa0e0, 0x00007f50391fa678]
+Event: 1.217 Thread 0x00007f5048106800 nmethod 322% 0x00007f50391fd790 code [0x00007f50391fdac0, 0x00007f50391ff038]
+Event: 1.217 Thread 0x00007f5048106800  356       4       java.lang.String::compareTo (78 bytes)
+Event: 1.219 Thread 0x00007f5048106800 nmethod 356 0x00007f50391fba90 code [0x00007f50391fbbe0, 0x00007f50391fbd98]
+Event: 1.219 Thread 0x00007f5048106800  339       4       java.util.HashMap::getNode (148 bytes)
+Event: 1.222 Thread 0x00007f5048106800 nmethod 339 0x00007f50391fb450 code [0x00007f50391fb5c0, 0x00007f50391fb838]
+Event: 1.222 Thread 0x00007f5048106800  346       4       java.util.LinkedHashMap::get (33 bytes)
+Event: 1.226 Thread 0x00007f5048106800 nmethod 346 0x00007f50391fac50 code [0x00007f50391fadc0, 0x00007f50391fb118]
+Event: 1.226 Thread 0x00007f5048106800  347       4       com.sun.tools.javac.file.RelativePath::hashCode (8 bytes)
+Event: 1.228 Thread 0x00007f5048106800 nmethod 347 0x00007f5039203590 code [0x00007f50392036e0, 0x00007f5039203858]
+Event: 1.228 Thread 0x00007f5048106800  329       4       java.lang.Math::min (11 bytes)
+Event: 1.229 Thread 0x00007f5048106800 nmethod 329 0x00007f503918fad0 code [0x00007f503918fc00, 0x00007f503918fc38]
+Event: 1.229 Thread 0x00007f5048106800  359       4       com.sun.tools.javac.file.ZipFileIndex$Entry::compareTo (9 bytes)
+Event: 1.235 Thread 0x00007f5048106800 nmethod 359 0x00007f50392013d0 code [0x00007f5039201540, 0x00007f50392018b8]
+Event: 1.235 Thread 0x00007f5048106800  368       4       com.sun.tools.javac.file.ZipFileIndex$ZipDirectory::readEntry (587 bytes)
+Event: 1.276 Thread 0x00007f5048115000  370       3       java.io.File::hashCode (8 bytes)
+Event: 1.282 Thread 0x00007f5048115000 nmethod 370 0x00007f5039200e90 code [0x00007f5039201000, 0x00007f50392012a8]
+Event: 1.282 Thread 0x00007f5048115000  371       3       java.io.UnixFileSystem::hashCode (11 bytes)
+Event: 1.282 Thread 0x00007f5048115000 nmethod 371 0x00007f5039200a10 code [0x00007f5039200b80, 0x00007f5039200da8]
+Event: 1.283 Thread 0x00007f5048115000  375       2       com.sun.tools.javac.file.ZipFileIndex$Entry::setNativeTime (6 bytes)
+Event: 1.283 Thread 0x00007f5048115000 nmethod 375 0x00007f50392006d0 code [0x00007f5039200820, 0x00007f5039200970]
+Event: 1.286 Thread 0x00007f5048115000  376       2       java.util.ComparableTimSort::ensureCapacity (91 bytes)
+Event: 1.286 Thread 0x00007f5048115000 nmethod 376 0x00007f50391f29d0 code [0x00007f50391f2b40, 0x00007f50391f2d90]
+Event: 1.286 Thread 0x00007f5048115000  377       2       java.util.ComparableTimSort::mergeLo (656 bytes)
+Event: 1.288 Thread 0x00007f5048115000 nmethod 377 0x00007f5039203950 code [0x00007f5039203c00, 0x00007f5039205278]
+Event: 1.288 Thread 0x00007f5048115000  378       2       java.util.ComparableTimSort::mergeHi (729 bytes)
+Event: 1.289 Thread 0x00007f5048115000 nmethod 378 0x00007f5039206010 code [0x00007f50392062c0, 0x00007f5039207a58]
+Event: 1.434 Thread 0x00007f5048115000  382       2       com.sun.tools.javac.util.List::nonEmpty (13 bytes)
+Event: 1.435 Thread 0x00007f5048115000 nmethod 382 0x00007f50391f2450 code [0x00007f50391f25a0, 0x00007f50391f2710]
+Event: 1.435 Thread 0x00007f5048115000  383       2       com.sun.tools.javac.util.List::setTail (7 bytes)
+Event: 1.436 Thread 0x00007f5048115000 nmethod 383 0x00007f50391f2110 code [0x00007f50391f2260, 0x00007f50391f23d0]
+Event: 1.436 Thread 0x00007f5048115000  385       2       com.sun.tools.javac.util.List::isEmpty (13 bytes)
+Event: 1.436 Thread 0x00007f5048115000 nmethod 385 0x00007f50391f1dd0 code [0x00007f50391f1f20, 0x00007f50391f2090]
+Event: 1.436 Thread 0x00007f5048115000  384       1       java.util.ArrayList::access$000 (5 bytes)
+Event: 1.436 Thread 0x00007f5048115000 nmethod 384 0x00007f50391f1b10 code [0x00007f50391f1c60, 0x00007f50391f1d50]
+Event: 1.436 Thread 0x00007f5048115000  381       1       com.sun.tools.javac.file.ZipFileIndex::access$800 (5 bytes)
+Event: 1.436 Thread 0x00007f5048115000 nmethod 381 0x00007f50391fd4d0 code [0x00007f50391fd620, 0x00007f50391fd710]
+Event: 1.442 Thread 0x00007f5048115000  386       2       com.sun.tools.javac.util.List::reverse (55 bytes)
+Event: 1.442 Thread 0x00007f5048115000 nmethod 386 0x00007f50391fcf10 code [0x00007f50391fd0a0, 0x00007f50391fd398]
+Event: 1.442 Thread 0x00007f5048115000  387       1       com.sun.tools.javac.util.List::setTail (7 bytes)
+Event: 1.442 Thread 0x00007f5048115000 nmethod 387 0x00007f50391fcc10 code [0x00007f50391fcd60, 0x00007f50391fce90]
+Event: 1.442 Thread 0x00007f5048115000  388       2       com.sun.tools.javac.util.List::prependList (87 bytes)
+Event: 1.442 Thread 0x00007f5048115000 nmethod 388 0x00007f50391fc2d0 code [0x00007f50391fc4a0, 0x00007f50391fc918]
+Event: 1.446 Thread 0x00007f5048115000  389       2       java.util.ArrayList::rangeCheck (22 bytes)
+Event: 1.446 Thread 0x00007f5048115000 nmethod 389 0x00007f5039202bd0 code [0x00007f5039202da0, 0x00007f5039203218]
+Event: 1.446 Thread 0x00007f5048115000  390       2       java.util.ArrayList::elementData (7 bytes)
+Event: 1.446 Thread 0x00007f5048115000 nmethod 390 0x00007f50391fbed0 code [0x00007f50391fc040, 0x00007f50391fc1b0]
+Event: 1.446 Thread 0x00007f5048115000  391       2       java.util.ArrayList::get (11 bytes)
+Event: 1.446 Thread 0x00007f5048115000 nmethod 391 0x00007f50392025d0 code [0x00007f5039202760, 0x00007f50392029b8]
+Event: 1.446 Thread 0x00007f5048115000  392       2       com.sun.tools.javac.util.List::of (12 bytes)
+Event: 1.446 Thread 0x00007f5048115000 nmethod 392 0x00007f5039202210 code [0x00007f5039202380, 0x00007f5039202530]
+Event: 1.446 Thread 0x00007f5048115000  393       1       com.sun.tools.javac.file.ZipFileIndex::getZipFile (5 bytes)
+Event: 1.446 Thread 0x00007f5048115000 nmethod 393 0x00007f5039201f50 code [0x00007f50392020a0, 0x00007f50392021b0]
+Event: 1.446 Thread 0x00007f5048115000  394       1       com.sun.tools.javac.file.ZipFileIndex$Entry::getFileName (5 bytes)
+Event: 1.446 Thread 0x00007f5048115000 nmethod 394 0x00007f5039201c90 code [0x00007f5039201de0, 0x00007f5039201ef0]
+Event: 1.447 Thread 0x00007f5048115000  395       2       com.sun.tools.javac.util.SharedNameTable::fromUtf (174 bytes)
+Event: 1.447 Thread 0x00007f5048115000 nmethod 395 0x00007f5039208890 code [0x00007f5039208a60, 0x00007f5039209198]
+Event: 1.450 Thread 0x00007f5048115000  402       1       java.lang.CharacterDataLatin1::getProperties (11 bytes)
+Event: 1.450 Thread 0x00007f5048115000 nmethod 402 0x00007f5039209650 code [0x00007f50392097c0, 0x00007f50392098f0]
+Event: 1.450 Thread 0x00007f5048115000  398       2       java.lang.Character::charCount (12 bytes)
+Event: 1.450 Thread 0x00007f5048115000 nmethod 398 0x00007f50392099d0 code [0x00007f5039209b20, 0x00007f5039209c70]
+Event: 1.450 Thread 0x00007f5048115000  399       2       java.lang.Character::isHighSurrogate (18 bytes)
+Event: 1.450 Thread 0x00007f5048115000 nmethod 399 0x00007f5039209cd0 code [0x00007f5039209e20, 0x00007f5039209f70]
+Event: 1.450 Thread 0x00007f5048115000  400       2       java.lang.String::codePointAt (36 bytes)
+Event: 1.450 Thread 0x00007f5048115000 nmethod 400 0x00007f5039209fd0 code [0x00007f503920a140, 0x00007f503920a338]
+Event: 1.450 Thread 0x00007f5048115000  401       2       java.lang.Character::codePointAtImpl (41 bytes)
+Event: 1.450 Thread 0x00007f5048115000 nmethod 401 0x00007f503920a450 code [0x00007f503920a5c0, 0x00007f503920a7d0]
+Event: 1.450 Thread 0x00007f5048115000  396       2       java.lang.Character::isJavaIdentifierPart (9 bytes)
+Event: 1.450 Thread 0x00007f5048115000 nmethod 396 0x00007f503920a8d0 code [0x00007f503920aa40, 0x00007f503920abb8]
+Event: 1.450 Thread 0x00007f5048115000  397       2       java.lang.CharacterDataLatin1::isJavaIdentifierPart (20 bytes)
+Event: 1.450 Thread 0x00007f5048115000 nmethod 397 0x00007f503920ac50 code [0x00007f503920adc0, 0x00007f503920af50]
+Event: 1.450 Thread 0x00007f5048115000  403       2       com.sun.tools.javac.util.Name::getBytes (18 bytes)
+Event: 1.451 Thread 0x00007f5048115000 nmethod 403 0x00007f503920b090 code [0x00007f503920b220, 0x00007f503920b4b8]
+Event: 1.458 Thread 0x00007f5048115000  404       2       com.sun.tools.javac.file.RelativePath$RelativeFile::<init> (26 bytes)
+Event: 1.458 Thread 0x00007f5048115000 nmethod 404 0x00007f503920b5d0 code [0x00007f503920b780, 0x00007f503920bbe8]
+Event: 1.458 Thread 0x00007f5048115000  405       2       com.sun.tools.javac.code.Scope::getIndex (101 bytes)
+Event: 1.459 Thread 0x00007f5048115000 nmethod 405 0x00007f503920bf50 code [0x00007f503920c0e0, 0x00007f503920c368]
+Event: 1.459 Thread 0x00007f5048115000  406       2       java.lang.String::lastIndexOf (151 bytes)
+Event: 1.459 Thread 0x00007f5048115000 nmethod 406 0x00007f503920c550 code [0x00007f503920c6e0, 0x00007f503920ca70]
+Event: 1.459 Thread 0x00007f5048115000  407       2       java.lang.String::lastIndexOf (11 bytes)
+Event: 1.459 Thread 0x00007f5048115000 nmethod 407 0x00007f503920ced0 code [0x00007f503920d040, 0x00007f503920d1e8]
+Event: 1.459 Thread 0x00007f5048115000  408       2       com.sun.tools.javac.file.ZipFileIndex$Entry::getName (19 bytes)
+Event: 1.460 Thread 0x00007f5048115000 nmethod 408 0x00007f503920d310 code [0x00007f503920d4c0, 0x00007f503920d988]
+Event: 1.460 Thread 0x00007f5048115000  409       2       com.sun.tools.javac.util.BaseFileManager::getKind (55 bytes)
+Event: 1.460 Thread 0x00007f5048115000 nmethod 409 0x00007f503920de10 code [0x00007f503920dfc0, 0x00007f503920e268]
+Event: 1.461 Thread 0x00007f5048115000  412       2       com.sun.tools.javac.util.Name::append (53 bytes)
+Event: 1.461 Thread 0x00007f5048115000 nmethod 412 0x00007f503920e590 code [0x00007f503920e7a0, 0x00007f503920ecc8]
+Event: 1.461 Thread 0x00007f5048115000  410       2       java.lang.Enum::hashCode (5 bytes)
+Event: 1.461 Thread 0x00007f5048115000 nmethod 410 0x00007f503920efd0 code [0x00007f503920f140, 0x00007f503920f2a8]
+Event: 1.461 Thread 0x00007f5048115000  411       2       com.sun.tools.javac.code.Symbol$TypeSymbol::formFlatName (85 bytes)
+Event: 1.462 Thread 0x00007f5048115000 nmethod 411 0x00007f503920f350 code [0x00007f503920f4e0, 0x00007f503920f768]
+Event: 1.482 Thread 0x00007f5048115000  413       2       com.sun.tools.javac.code.Symbol::flatName (5 bytes)
+Event: 1.482 Thread 0x00007f5048115000 nmethod 413 0x00007f503920f950 code [0x00007f503920fac0, 0x00007f503920fc48]
+Event: 1.482 Thread 0x00007f5048115000  414       2       java.lang.ref.ReferenceQueue::reallyPoll (65 bytes)
+Event: 1.483 Thread 0x00007f5048115000 nmethod 414 0x00007f503920fcd0 code [0x00007f503920fe40, 0x00007f50392100d0]
+Event: 1.483 Thread 0x00007f5048115000  415       2       java.lang.ref.Finalizer::access$000 (4 bytes)
+Event: 1.483 Thread 0x00007f5048115000 nmethod 415 0x00007f5039210190 code [0x00007f50392102e0, 0x00007f5039210410]
+Event: 1.483 Thread 0x00007f5048115000  416       2       java.lang.ref.ReferenceQueue::remove (6 bytes)
+Event: 1.483 Thread 0x00007f5048115000 nmethod 416 0x00007f5039210490 code [0x00007f5039210600, 0x00007f5039210788]
+Event: 1.483 Thread 0x00007f5048115000  417   !   2       java.lang.ref.ReferenceQueue::remove (125 bytes)
+Event: 1.483 Thread 0x00007f5048115000 nmethod 417 0x00007f5039210810 code [0x00007f50392109e0, 0x00007f5039211038]
+Event: 1.483 Thread 0x00007f5048115000  418       2       java.lang.ref.Finalizer::access$100 (6 bytes)
+Event: 1.483 Thread 0x00007f5048115000 nmethod 418 0x00007f5039211450 code [0x00007f50392115c0, 0x00007f5039211708]
+Event: 1.483 Thread 0x00007f5048115000  419   !   2       java.lang.ref.Finalizer::runFinalizer (62 bytes)
+Event: 1.484 Thread 0x00007f5048115000 nmethod 419 0x00007f50392117d0 code [0x00007f5039211960, 0x00007f5039211dd8]
+Event: 1.484 Thread 0x00007f5048115000  420       2       java.lang.ref.Finalizer::hasBeenFinalized (14 bytes)
+Event: 1.484 Thread 0x00007f5048115000 nmethod 420 0x00007f5039211f90 code [0x00007f50392120e0, 0x00007f5039212250]
+Event: 1.484 Thread 0x00007f5048115000  421   !   2       java.lang.ref.Finalizer::remove (94 bytes)
+Event: 1.484 Thread 0x00007f5048115000 nmethod 421 0x00007f50392122d0 code [0x00007f5039212440, 0x00007f5039212830]
+Event: 1.484 Thread 0x00007f5048115000  422       2       java.lang.System$2::invokeFinalize (5 bytes)
+Event: 1.484 Thread 0x00007f5048115000 nmethod 422 0x00007f5039212990 code [0x00007f5039212b00, 0x00007f5039212c88]
+Event: 1.484 Thread 0x00007f5048115000  423       2       java.lang.ref.Reference::clear (6 bytes)
+Event: 1.484 Thread 0x00007f5048115000 nmethod 423 0x00007f5039212d10 code [0x00007f5039212e60, 0x00007f5039212fd0]
+Event: 1.485 Thread 0x00007f5048115000  425       2       com.sun.tools.javac.code.Scope$Entry::<init> (26 bytes)
+Event: 1.485 Thread 0x00007f5048115000 nmethod 425 0x00007f5039213050 code [0x00007f50392131a0, 0x00007f5039213330]
+Event: 1.485 Thread 0x00007f5048115000  426       2       com.sun.tools.javac.code.Scope::enter (9 bytes)
+Event: 1.485 Thread 0x00007f5048115000 nmethod 426 0x00007f50392133d0 code [0x00007f5039213540, 0x00007f50392136c8]
+Event: 1.485 Thread 0x00007f5048115000  427       2       com.sun.tools.javac.code.Scope::enter (145 bytes)
+Event: 1.486 Thread 0x00007f5048115000 nmethod 427 0x00007f5039213750 code [0x00007f5039213920, 0x00007f5039213e48]
+Event: 1.494 Thread 0x00007f5048115000  428       2       com.sun.tools.javac.jvm.ClassReader::nextChar (46 bytes)
+Event: 1.495 Thread 0x00007f5048115000 nmethod 428 0x00007f5039214310 code [0x00007f5039214480, 0x00007f5039214650]
+Event: 1.495 Thread 0x00007f5048115000  429       2       java.util.RegularEnumSet::contains (57 bytes)
+Event: 1.495 Thread 0x00007f5048115000 nmethod 429 0x00007f5039214750 code [0x00007f50392148c0, 0x00007f5039214b28]
+Event: 1.499 Thread 0x00007f5048115000  430       2       com.sun.tools.javac.code.Type::<init> (10 bytes)
+Event: 1.499 Thread 0x00007f5048115000 nmethod 430 0x00007f5039214c50 code [0x00007f5039214da0, 0x00007f5039214f10]
+Event: 1.499 Thread 0x00007f5048115000  431       2       com.sun.tools.javac.code.Symbol::<init> (43 bytes)
+Event: 1.499 Thread 0x00007f5048115000 nmethod 431 0x00007f5039214f90 code [0x00007f50392150e0, 0x00007f5039215290]
+Event: 1.499 Thread 0x00007f5048115000  432       1       com.sun.tools.javac.util.List$1::isEmpty (2 bytes)
+Event: 1.499 Thread 0x00007f5048115000 nmethod 432 0x00007f5039215310 code [0x00007f5039215460, 0x00007f5039215570]
+Event: 1.499 Thread 0x00007f5048115000  433       2       com.sun.tools.javac.code.Scope::enter (22 bytes)
+Event: 1.500 Thread 0x00007f5048115000 nmethod 433 0x00007f50392155d0 code [0x00007f5039215760, 0x00007f50392159b8]
+Event: 1.500 Thread 0x00007f5048115000  434       2       com.sun.tools.javac.code.Scope::makeEntry (13 bytes)
+Event: 1.500 Thread 0x00007f5048115000 nmethod 434 0x00007f5039215b50 code [0x00007f5039215cc0, 0x00007f5039215eb0]
+Event: 1.506 Thread 0x00007f5048115000  435       2       com.sun.tools.javac.code.Type$ClassType::getTag (4 bytes)
+Event: 1.506 Thread 0x00007f5048115000 nmethod 435 0x00007f5039215f50 code [0x00007f50392160a0, 0x00007f50392161f0]
+Event: 1.506 Thread 0x00007f5048115000  436 %     3       com.sun.tools.javac.util.List::reverse @ 25 (55 bytes)
+Event: 1.507 Thread 0x00007f5048115000 nmethod 436% 0x00007f5039216290 code [0x00007f5039216460, 0x00007f5039216bf8]
+Event: 1.507 Thread 0x00007f5048115000  437       3       com.sun.tools.javac.util.List::reverse (55 bytes)
+Event: 1.507 Thread 0x00007f5048115000 nmethod 437 0x00007f5039216e90 code [0x00007f5039217060, 0x00007f50392177b8]
+Event: 1.514 Thread 0x00007f5048115000  438 %     3       com.sun.tools.javac.util.List::prependList @ 57 (87 bytes)
+Event: 1.514 Thread 0x00007f5048115000 nmethod 438% 0x00007f5039217a50 code [0x00007f5039217c80, 0x00007f5039218958]
+Event: 1.514 Thread 0x00007f5048115000  439       3       com.sun.tools.javac.util.List::prependList (87 bytes)
+Event: 1.515 Thread 0x00007f5048115000 nmethod 439 0x00007f5039218e50 code [0x00007f5039219080, 0x00007f5039219d18]
+Event: 1.515 Thread 0x00007f5048115000  440       2       java.util.ArrayList$Itr::hasNext (20 bytes)
+Event: 1.515 Thread 0x00007f5048115000 nmethod 440 0x00007f503921a210 code [0x00007f503921a360, 0x00007f503921a4d0]
+Event: 1.516 Thread 0x00007f5048115000  441       2       java.util.ArrayList$Itr::next (66 bytes)
+Event: 1.516 Thread 0x00007f5048115000 nmethod 441 0x00007f503921a590 code [0x00007f503921a740, 0x00007f503921aa68]
+Event: 1.516 Thread 0x00007f5048115000  442       2       java.util.ArrayList$Itr::checkForComodification (23 bytes)
+Event: 1.516 Thread 0x00007f5048115000 nmethod 442 0x00007f503921acd0 code [0x00007f503921ae40, 0x00007f503921b008]
+Event: 1.525 Thread 0x00007f5048115000  444       2       javax.lang.model.SourceVersion::isIdentifier (71 bytes)
+Event: 1.525 Thread 0x00007f5048115000 nmethod 444 0x00007f503921b490 code [0x00007f503921b660, 0x00007f503921b9a8]
+Event: 1.525 Thread 0x00007f5048115000  446       2       com.sun.tools.javac.file.Locations::lazy (72 bytes)
+Event: 1.525 Thread 0x00007f5048115000 nmethod 446 0x00007f503921bc10 code [0x00007f503921bde0, 0x00007f503921c0f8]
+Event: 1.525 Thread 0x00007f5048115000  445       2       com.sun.tools.javac.file.Locations::getHandler (23 bytes)
+Event: 1.526 Thread 0x00007f5048115000 nmethod 445 0x00007f503921c310 code [0x00007f503921c480, 0x00007f503921c678]
+Event: 1.526 Thread 0x00007f5048115000  447       2       com.sun.tools.javac.util.BaseFileManager::nullCheck (7 bytes)
+Event: 1.526 Thread 0x00007f5048115000 nmethod 447 0x00007f503921c790 code [0x00007f503921c8e0, 0x00007f503921ca10]
+Event: 1.526 Thread 0x00007f5048115000  448       2       com.sun.tools.javac.file.Locations$BootClassPathLocationHandler::lazy (19 bytes)
+Event: 1.526 Thread 0x00007f5048115000 nmethod 448 0x00007f503921cad0 code [0x00007f503921cc60, 0x00007f503921cf18]
+Event: 1.526 Thread 0x00007f5048115000  449       2       com.sun.tools.javac.file.JavacFileManager::getLocation (14 bytes)
+Event: 1.526 Thread 0x00007f5048115000 nmethod 449 0x00007f503921d090 code [0x00007f503921d220, 0x00007f503921d468]
+Event: 1.526 Thread 0x00007f5048115000  450       2       com.sun.tools.javac.file.Locations::getLocation (19 bytes)
+Event: 1.526 Thread 0x00007f5048115000 nmethod 450 0x00007f503921d610 code [0x00007f503921d7a0, 0x00007f503921d9c8]
+Event: 1.526 Thread 0x00007f5048115000  451       2       com.sun.tools.javac.file.BaseFileObject::getKind (5 bytes)
+Event: 1.526 Thread 0x00007f5048115000 nmethod 451 0x00007f503921db10 code [0x00007f503921dc80, 0x00007f503921ddc8]
+Event: 1.531 Thread 0x00007f5048115000  452       2       java.lang.ClassLoader::compareCerts (149 bytes)
+Event: 1.531 Thread 0x00007f5048115000 nmethod 452 0x00007f503921de50 code [0x00007f503921e000, 0x00007f503921e498]
+Event: 1.545 Thread 0x00007f5048115000  453       2       java.util.regex.Pattern::has (15 bytes)
+Event: 1.545 Thread 0x00007f5048115000 nmethod 453 0x00007f503921e750 code [0x00007f503921e8a0, 0x00007f503921ea10]
+Event: 1.553 Thread 0x00007f5048115000  454       2       com.sun.tools.javac.code.Type::hasTag (14 bytes)
+Event: 1.553 Thread 0x00007f5048115000 nmethod 454 0x00007f503921f710 code [0x00007f503921f880, 0x00007f503921fa08]
+Event: 1.557 Thread 0x00007f5048115000  455       1       com.sun.tools.javac.code.Type$MethodType::getParameterTypes (5 bytes)
+Event: 1.558 Thread 0x00007f5048115000 nmethod 455 0x00007f503921fc90 code [0x00007f503921fde0, 0x00007f503921fef0]
+Event: 1.558 Thread 0x00007f5048115000  456       1       com.sun.tools.javac.code.Type$JCPrimitiveType::getTag (5 bytes)
+Event: 1.558 Thread 0x00007f5048115000 nmethod 456 0x00007f503921ff50 code [0x00007f50392200a0, 0x00007f50392201b0]
+Event: 1.559 Thread 0x00007f5048115000  457       1       com.sun.tools.javac.util.List$2::hasNext (2 bytes)
+Event: 1.559 Thread 0x00007f5048115000 nmethod 457 0x00007f5039220210 code [0x00007f5039220360, 0x00007f5039220470]
+Event: 1.569 Thread 0x00007f5048115000  458       2       com.sun.tools.javac.code.Symbol$ClassSymbol::flags (16 bytes)
+Event: 1.570 Thread 0x00007f5048115000 nmethod 458 0x00007f50392204d0 code [0x00007f5039220640, 0x00007f50392207c8]
+Event: 1.570 Thread 0x00007f5048115000  459       2       com.sun.tools.javac.util.List::length (24 bytes)
+Event: 1.570 Thread 0x00007f5048115000 nmethod 459 0x00007f5039220850 code [0x00007f50392209c0, 0x00007f5039220b70]
+Event: 1.570 Thread 0x00007f5048115000  460       2       com.sun.tools.javac.code.Type::unannotatedType (2 bytes)
+Event: 1.570 Thread 0x00007f5048115000 nmethod 460 0x00007f5039220c50 code [0x00007f5039220da0, 0x00007f5039220ef0]
+Event: 1.571 Thread 0x00007f5048115000  461       2       com.sun.tools.javac.code.Type$ClassType::accept (9 bytes)
+Event: 1.571 Thread 0x00007f5048115000 nmethod 461 0x00007f5039220f90 code [0x00007f5039221100, 0x00007f5039221288]
+Event: 1.571 Thread 0x00007f5048115000  462       1       com.sun.tools.javac.code.Type$ClassType::getEnclosingType (5 bytes)
+Event: 1.571 Thread 0x00007f5048115000 nmethod 462 0x00007f5039221310 code [0x00007f5039221460, 0x00007f5039221570]
+Event: 1.574 Thread 0x00007f5048115000  463       2       com.sun.tools.javac.jvm.ClassReader::getChar (28 bytes)
+Event: 1.574 Thread 0x00007f5048115000 nmethod 463 0x00007f50392215d0 code [0x00007f5039221740, 0x00007f50392218f0]
+Event: 1.574 Thread 0x00007f5048115000  464   !   2       com.sun.tools.javac.jvm.ClassReader::classSigToType (498 bytes)
+Event: 1.576 Thread 0x00007f5048115000 nmethod 464 0x00007f5039221a10 code [0x00007f5039221d40, 0x00007f5039222de8]
+Event: 1.576 Thread 0x00007f5048115000  465       2       com.sun.tools.javac.util.List::iterator (20 bytes)
+Event: 1.576 Thread 0x00007f5048115000 nmethod 465 0x00007f5039223f10 code [0x00007f5039224080, 0x00007f5039224270]
+Event: 1.576 Thread 0x00007f5048115000  466       2       com.sun.tools.javac.util.List::emptyIterator (4 bytes)
+Event: 1.577 Thread 0x00007f5048115000 nmethod 466 0x00007f5039224310 code [0x00007f5039224460, 0x00007f5039224590]
+Event: 1.577 Thread 0x00007f5048115000  469       2       com.sun.tools.javac.jvm.ClassReader::sigToType (880 bytes)
+Event: 1.579 Thread 0x00007f5048115000 nmethod 469 0x00007f5039224610 code [0x00007f50392249e0, 0x00007f50392261b8]
+Event: 1.579 Thread 0x00007f5048115000  468       2       com.sun.tools.javac.code.Type$MethodType::<init> (22 bytes)
+Event: 1.580 Thread 0x00007f5048115000 nmethod 468 0x00007f50392278d0 code [0x00007f5039227a20, 0x00007f5039227bb0]
+Event: 1.580 Thread 0x00007f5048115000  467       2       com.sun.tools.javac.code.Types$DefaultTypeVisitor::visit (7 bytes)
+Event: 1.580 Thread 0x00007f5048115000 nmethod 467 0x00007f5039227c50 code [0x00007f5039227dc0, 0x00007f5039227f48]
+Event: 1.625 Thread 0x00007f5048115000  470       2       com.sun.tools.javac.code.Scope::lookup (67 bytes)
+Event: 1.630 Thread 0x00007f5048115000 nmethod 470 0x00007f5039227fd0 code [0x00007f5039228160, 0x00007f5039228418]
+Event: 1.630 Thread 0x00007f5048115000  471       2       com.sun.tools.javac.jvm.ClassReader::readName (55 bytes)
+Event: 1.631 Thread 0x00007f5048115000 nmethod 471 0x00007f5039228610 code [0x00007f5039228800, 0x00007f5039228eb8]
+Event: 1.631 Thread 0x00007f5048115000  472       2       com.sun.tools.javac.code.Symbol::isInterface (19 bytes)
+Event: 1.631 Thread 0x00007f5048115000 nmethod 472 0x00007f50392293d0 code [0x00007f5039229540, 0x00007f50392296e8]
+Event: 1.631 Thread 0x00007f5048115000  473       2       com.sun.tools.javac.code.Symbol$ClassSymbol::erasure (38 bytes)
+Event: 1.632 Thread 0x00007f5048115000 nmethod 473 0x00007f5039229790 code [0x00007f5039229940, 0x00007f5039229d08]
+Event: 1.632 Thread 0x00007f5048115000  474       2       com.sun.tools.javac.jvm.ClassReader::readType (26 bytes)
+Event: 1.632 Thread 0x00007f5048115000 nmethod 474 0x00007f503922a050 code [0x00007f503922a1c0, 0x00007f503922a3e8]
+Event: 1.632 Thread 0x00007f5048115000  475       2       com.sun.tools.javac.jvm.ClassReader::sigToType (22 bytes)
+Event: 1.632 Thread 0x00007f5048115000 nmethod 475 0x00007f503922a610 code [0x00007f503922a780, 0x00007f503922a928]
+Event: 1.633 Thread 0x00007f5048115000  477       2       com.sun.tools.javac.jvm.ClassReader::readAttrs (95 bytes)
+Event: 1.633 Thread 0x00007f5048115000 nmethod 477 0x00007f503922a9d0 code [0x00007f503922abc0, 0x00007f503922b168]
+Event: 1.636 Thread 0x00007f5048115000  478       1       java.lang.Boolean::booleanValue (5 bytes)
+Event: 1.637 Thread 0x00007f5048115000 nmethod 478 0x00007f503922b750 code [0x00007f503922b8a0, 0x00007f503922b9b0]
+Event: 1.637 Thread 0x00007f5048115000  479       2       com.sun.tools.javac.code.Type$JCNoType::getTag (4 bytes)
+Event: 1.637 Thread 0x00007f5048115000 nmethod 479 0x00007f503922ba10 code [0x00007f503922bb60, 0x00007f503922bcb0]
+
+GC Heap History (18 events):
+Event: 0.424 GC heap before
+{Heap before GC invocations=0 (full 0):
+ def new generation   total 2432K, used 2176K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K, 100% used [0x00000000f0a00000, 0x00000000f0c20000, 0x00000000f0c20000)
+  from space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 0K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,   0% used [0x00000000f5c00000, 0x00000000f5c00000, 0x00000000f5c00200, 0x00000000f6160000)
+ Metaspace       used 3721K, capacity 5004K, committed 5120K, reserved 1056768K
+  class space    used 379K, capacity 456K, committed 512K, reserved 1048576K
+Event: 0.427 GC heap after
+Heap after GC invocations=1 (full 0):
+ def new generation   total 2432K, used 255K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c60000, 0x00000000f0c9fff8, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 165K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,   3% used [0x00000000f5c00000, 0x00000000f5c297c8, 0x00000000f5c29800, 0x00000000f6160000)
+ Metaspace       used 3721K, capacity 5004K, committed 5120K, reserved 1056768K
+  class space    used 379K, capacity 456K, committed 512K, reserved 1048576K
+}
+Event: 0.538 GC heap before
+{Heap before GC invocations=1 (full 0):
+ def new generation   total 2432K, used 2369K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,  97% used [0x00000000f0a00000, 0x00000000f0c107e8, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c60000, 0x00000000f0c9fff8, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 165K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,   3% used [0x00000000f5c00000, 0x00000000f5c297c8, 0x00000000f5c29800, 0x00000000f6160000)
+ Metaspace       used 4443K, capacity 5676K, committed 6016K, reserved 1056768K
+  class space    used 479K, capacity 552K, committed 640K, reserved 1048576K
+Event: 0.543 GC heap after
+Heap after GC invocations=2 (full 0):
+ def new generation   total 2432K, used 256K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K, 100% used [0x00000000f0c20000, 0x00000000f0c60000, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 685K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  12% used [0x00000000f5c00000, 0x00000000f5cab7b8, 0x00000000f5cab800, 0x00000000f6160000)
+ Metaspace       used 4443K, capacity 5676K, committed 6016K, reserved 1056768K
+  class space    used 479K, capacity 552K, committed 640K, reserved 1048576K
+}
+Event: 0.706 GC heap before
+{Heap before GC invocations=2 (full 0):
+ def new generation   total 2432K, used 2401K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,  98% used [0x00000000f0a00000, 0x00000000f0c185a0, 0x00000000f0c20000)
+  from space 256K, 100% used [0x00000000f0c20000, 0x00000000f0c60000, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 685K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  12% used [0x00000000f5c00000, 0x00000000f5cab7b8, 0x00000000f5cab800, 0x00000000f6160000)
+ Metaspace       used 5194K, capacity 6316K, committed 6528K, reserved 1056768K
+  class space    used 566K, capacity 616K, committed 640K, reserved 1048576K
+Event: 0.707 GC heap after
+Heap after GC invocations=3 (full 0):
+ def new generation   total 2432K, used 82K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K,  32% used [0x00000000f0c60000, 0x00000000f0c74958, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 869K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  15% used [0x00000000f5c00000, 0x00000000f5cd9400, 0x00000000f5cd9400, 0x00000000f6160000)
+ Metaspace       used 5194K, capacity 6316K, committed 6528K, reserved 1056768K
+  class space    used 566K, capacity 616K, committed 640K, reserved 1048576K
+}
+Event: 0.816 GC heap before
+{Heap before GC invocations=3 (full 0):
+ def new generation   total 2432K, used 2258K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K, 100% used [0x00000000f0a00000, 0x00000000f0c20000, 0x00000000f0c20000)
+  from space 256K,  32% used [0x00000000f0c60000, 0x00000000f0c74958, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 869K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  15% used [0x00000000f5c00000, 0x00000000f5cd9400, 0x00000000f5cd9400, 0x00000000f6160000)
+ Metaspace       used 5908K, capacity 6988K, committed 7168K, reserved 1056768K
+  class space    used 658K, capacity 712K, committed 768K, reserved 1048576K
+Event: 0.816 GC heap after
+Heap after GC invocations=4 (full 0):
+ def new generation   total 2432K, used 118K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K,  46% used [0x00000000f0c20000, 0x00000000f0c3d948, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 869K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  15% used [0x00000000f5c00000, 0x00000000f5cd9400, 0x00000000f5cd9400, 0x00000000f6160000)
+ Metaspace       used 5908K, capacity 6988K, committed 7168K, reserved 1056768K
+  class space    used 658K, capacity 712K, committed 768K, reserved 1048576K
+}
+Event: 0.916 GC heap before
+{Heap before GC invocations=4 (full 0):
+ def new generation   total 2432K, used 2257K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,  98% used [0x00000000f0a00000, 0x00000000f0c16dd8, 0x00000000f0c20000)
+  from space 256K,  46% used [0x00000000f0c20000, 0x00000000f0c3d948, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 869K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  15% used [0x00000000f5c00000, 0x00000000f5cd9400, 0x00000000f5cd9400, 0x00000000f6160000)
+ Metaspace       used 6546K, capacity 7628K, committed 7808K, reserved 1056768K
+  class space    used 726K, capacity 776K, committed 896K, reserved 1048576K
+Event: 0.917 GC heap after
+Heap after GC invocations=5 (full 0):
+ def new generation   total 2432K, used 255K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c60000, 0x00000000f0c9fff8, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 1080K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  19% used [0x00000000f5c00000, 0x00000000f5d0e258, 0x00000000f5d0e400, 0x00000000f6160000)
+ Metaspace       used 6546K, capacity 7628K, committed 7808K, reserved 1056768K
+  class space    used 726K, capacity 776K, committed 896K, reserved 1048576K
+}
+Event: 1.119 GC heap before
+{Heap before GC invocations=5 (full 0):
+ def new generation   total 2432K, used 2431K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K, 100% used [0x00000000f0a00000, 0x00000000f0c20000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c60000, 0x00000000f0c9fff8, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 1080K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  19% used [0x00000000f5c00000, 0x00000000f5d0e258, 0x00000000f5d0e400, 0x00000000f6160000)
+ Metaspace       used 7683K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 843K, capacity 880K, committed 896K, reserved 1048576K
+Event: 1.129 GC heap after
+Heap after GC invocations=6 (full 0):
+ def new generation   total 2432K, used 255K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c20000, 0x00000000f0c5fff8, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 1400K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  25% used [0x00000000f5c00000, 0x00000000f5d5e308, 0x00000000f5d5e400, 0x00000000f6160000)
+ Metaspace       used 7683K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 843K, capacity 880K, committed 896K, reserved 1048576K
+}
+Event: 1.171 GC heap before
+{Heap before GC invocations=6 (full 0):
+ def new generation   total 2432K, used 2431K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K, 100% used [0x00000000f0a00000, 0x00000000f0c20000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c20000, 0x00000000f0c5fff8, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 1400K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  25% used [0x00000000f5c00000, 0x00000000f5d5e308, 0x00000000f5d5e400, 0x00000000f6160000)
+ Metaspace       used 7704K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 845K, capacity 880K, committed 896K, reserved 1048576K
+Event: 1.174 GC heap after
+Heap after GC invocations=7 (full 0):
+ def new generation   total 2432K, used 255K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c60000, 0x00000000f0c9fff8, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 3389K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  61% used [0x00000000f5c00000, 0x00000000f5f4f700, 0x00000000f5f4f800, 0x00000000f6160000)
+ Metaspace       used 7704K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 845K, capacity 880K, committed 896K, reserved 1048576K
+}
+Event: 1.231 GC heap before
+{Heap before GC invocations=7 (full 0):
+ def new generation   total 2432K, used 2431K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K, 100% used [0x00000000f0a00000, 0x00000000f0c20000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c60000, 0x00000000f0c9fff8, 0x00000000f0ca0000)
+  to   space 256K,   0% used [0x00000000f0c20000, 0x00000000f0c20000, 0x00000000f0c60000)
+ tenured generation   total 5504K, used 3389K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  61% used [0x00000000f5c00000, 0x00000000f5f4f700, 0x00000000f5f4f800, 0x00000000f6160000)
+ Metaspace       used 7724K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 846K, capacity 880K, committed 896K, reserved 1048576K
+Event: 1.234 GC heap after
+Heap after GC invocations=8 (full 0):
+ def new generation   total 2432K, used 255K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c20000, 0x00000000f0c5fff8, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 5157K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  93% used [0x00000000f5c00000, 0x00000000f61097a8, 0x00000000f6109800, 0x00000000f6160000)
+ Metaspace       used 7724K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 846K, capacity 880K, committed 896K, reserved 1048576K
+}
+Event: 1.462 GC heap before
+{Heap before GC invocations=8 (full 0):
+ def new generation   total 2432K, used 2431K [0x00000000f0a00000, 0x00000000f0ca0000, 0x00000000f5c00000)
+  eden space 2176K, 100% used [0x00000000f0a00000, 0x00000000f0c20000, 0x00000000f0c20000)
+  from space 256K,  99% used [0x00000000f0c20000, 0x00000000f0c5fff8, 0x00000000f0c60000)
+  to   space 256K,   0% used [0x00000000f0c60000, 0x00000000f0c60000, 0x00000000f0ca0000)
+ tenured generation   total 5504K, used 5157K [0x00000000f5c00000, 0x00000000f6160000, 0x0000000100000000)
+   the space 5504K,  93% used [0x00000000f5c00000, 0x00000000f61097a8, 0x00000000f6109800, 0x00000000f6160000)
+ Metaspace       used 7776K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 850K, capacity 880K, committed 896K, reserved 1048576K
+Event: 1.476 GC heap after
+Heap after GC invocations=9 (full 1):
+ def new generation   total 3584K, used 0K [0x00000000f0a00000, 0x00000000f0de0000, 0x00000000f5c00000)
+  eden space 3200K,   0% used [0x00000000f0a00000, 0x00000000f0a00000, 0x00000000f0d20000)
+  from space 384K,   0% used [0x00000000f0d20000, 0x00000000f0d20000, 0x00000000f0d80000)
+  to   space 384K,   0% used [0x00000000f0d80000, 0x00000000f0d80000, 0x00000000f0de0000)
+ tenured generation   total 7832K, used 4698K [0x00000000f5c00000, 0x00000000f63a6000, 0x0000000100000000)
+   the space 7832K,  59% used [0x00000000f5c00000, 0x00000000f6096a88, 0x00000000f6096c00, 0x00000000f63a6000)
+ Metaspace       used 7776K, capacity 8372K, committed 8576K, reserved 1056768K
+  class space    used 850K, capacity 880K, committed 896K, reserved 1048576K
+}
+
+Deoptimization events (5 events):
+Event: 0.990 Thread 0x00007f504804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5039149144 method=java.lang.String.indexOf(II)I @ 49
+Event: 0.991 Thread 0x00007f504804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f503917e8d4 method=java.lang.String.replace(CC)Ljava/lang/String; @ 2
+Event: 0.998 Thread 0x00007f504804c800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f50391be4d4 method=sun.misc.URLClassPath.getLoader(I)Lsun/misc/URLClassPath$Loader; @ 94
+Event: 0.999 Thread 0x00007f504804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f50391a8740 method=java.lang.String.indexOf([CII[CIII)I @ 134
+Event: 1.047 Thread 0x00007f504804c800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f50391c9118 method=java.lang.String.<init>([CII)V @ 18
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (13 events):
+Event: 0.124 Thread 0x00007f504804c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000f0a07cb8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x8
+Event: 0.124 Thread 0x00007f504804c800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000f0a07fa0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotsp
+Event: 0.385 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0b7ef08) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.385 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0b7f300) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.388 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0b81f08) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.388 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0b82300) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.388 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0b83238) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.388 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0b83630) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.399 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0bb87a0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 0.399 Thread 0x00007f504804c800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000f0bb8b98) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1512]
+Event: 1.225 Thread 0x00007f504804c800 Exception <a 'java/io/FileNotFoundException'> (0x00000000f0c0c7a0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 1.280 Thread 0x00007f504804c800 Exception <a 'java/io/FileNotFoundException'> (0x00000000f0a11a38) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+Event: 1.280 Thread 0x00007f504804c800 Exception <a 'java/io/FileNotFoundException'> (0x00000000f0a12520) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 710]
+
+Events (250 events):
+Event: 1.092 loading class java/io/RandomAccessFile
+Event: 1.093 loading class java/io/DataOutput
+Event: 1.093 loading class java/io/DataOutput done
+Event: 1.093 loading class java/io/DataInput
+Event: 1.093 loading class java/io/DataInput done
+Event: 1.093 loading class java/io/RandomAccessFile done
+Event: 1.094 loading class com/sun/tools/javac/file/ZipFileIndex$ZipDirectory
+Event: 1.094 loading class com/sun/tools/javac/file/ZipFileIndex$ZipDirectory done
+Event: 1.097 loading class com/sun/tools/javac/file/ZipFileIndex$DirectoryEntry
+Event: 1.097 loading class com/sun/tools/javac/file/ZipFileIndex$DirectoryEntry done
+Event: 1.098 loading class com/sun/tools/javac/file/ZipFileIndex$Entry
+Event: 1.098 loading class com/sun/tools/javac/file/ZipFileIndex$Entry done
+Event: 1.117 Executing VM operation: GenCollectForAllocation
+Event: 1.129 Executing VM operation: GenCollectForAllocation done
+Event: 1.130 loading class java/util/Arrays$LegacyMergeSort
+Event: 1.141 loading class java/util/Arrays$LegacyMergeSort done
+Event: 1.142 loading class sun/security/action/GetBooleanAction
+Event: 1.143 loading class sun/security/action/GetBooleanAction done
+Event: 1.143 loading class java/util/ComparableTimSort
+Event: 1.146 loading class java/util/ComparableTimSort done
+Event: 1.147 loading class java/io/RandomAccessFile$1
+Event: 1.148 loading class java/io/RandomAccessFile$1 done
+Event: 1.171 Executing VM operation: GenCollectForAllocation
+Event: 1.174 Executing VM operation: GenCollectForAllocation done
+Event: 1.208 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391f52d6 sp=0x00007f50517a69c0
+Event: 1.208 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6720 mode 0
+Event: 1.225 loading class com/sun/tools/javac/file/JavacFileManager$MissingArchive
+Event: 1.225 loading class com/sun/tools/javac/file/JavacFileManager$MissingArchive done
+Event: 1.229 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.229 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.231 Executing VM operation: GenCollectForAllocation
+Event: 1.234 Executing VM operation: GenCollectForAllocation done
+Event: 1.279 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.279 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.281 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.281 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.282 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.282 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.282 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.282 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.282 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.282 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.283 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.283 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.283 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.283 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.291 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.291 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.294 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.294 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.294 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.294 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.294 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.294 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.295 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.295 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.295 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.295 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.296 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.296 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.297 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.297 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.298 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391df3ea sp=0x00007f50517a69d0
+Event: 1.298 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6818 mode 0
+Event: 1.302 loading class com/sun/tools/javac/jvm/ClassReader$25
+Event: 1.302 loading class com/sun/tools/javac/jvm/ClassReader$25 done
+Event: 1.305 loading class com/sun/tools/javac/code/TargetType
+Event: 1.305 loading class com/sun/tools/javac/code/TargetType done
+Event: 1.306 loading class javax/lang/model/SourceVersion
+Event: 1.418 loading class javax/lang/model/SourceVersion done
+Event: 1.425 loading class com/sun/tools/javac/comp/AttrContext
+Event: 1.425 loading class com/sun/tools/javac/comp/AttrContext done
+Event: 1.427 loading class com/sun/tools/javac/code/Scope$ImportScope$1
+Event: 1.427 loading class com/sun/tools/javac/code/Scope$ImportScope$1 done
+Event: 1.443 loading class com/sun/tools/javac/file/ZipFileIndexArchive$ZipFileIndexFileObject
+Event: 1.443 loading class com/sun/tools/javac/file/ZipFileIndexArchive$ZipFileIndexFileObject done
+Event: 1.462 Executing VM operation: GenCollectForAllocation
+Event: 1.481 Executing VM operation: GenCollectForAllocation done
+Event: 1.485 loading class com/sun/tools/javac/comp/Check$CycleChecker
+Event: 1.485 loading class com/sun/tools/javac/comp/Check$CycleChecker done
+Event: 1.487 loading class com/sun/tools/javac/jvm/ClassReader$SourceFileObject
+Event: 1.487 loading class com/sun/tools/javac/jvm/ClassReader$SourceFileObject done
+Event: 1.488 loading class com/sun/tools/javac/util/Pair
+Event: 1.488 loading class com/sun/tools/javac/util/Pair done
+Event: 1.489 loading class com/sun/tools/javac/jvm/ClassReader$AnnotationCompleter
+Event: 1.489 loading class com/sun/tools/javac/jvm/ClassReader$AnnotationCompleter done
+Event: 1.489 loading class com/sun/tools/javac/jvm/ClassReader$AnnotationDeproxy
+Event: 1.489 loading class com/sun/tools/javac/jvm/ClassReader$AnnotationDeproxy done
+Event: 1.490 loading class com/sun/tools/javac/jvm/ClassReader$ProxyVisitor
+Event: 1.490 loading class com/sun/tools/javac/jvm/ClassReader$ProxyVisitor done
+Event: 1.492 loading class com/sun/tools/javac/code/BoundKind
+Event: 1.492 loading class com/sun/tools/javac/code/BoundKind done
+Event: 1.494 loading class com/sun/tools/javac/code/Scope$1
+Event: 1.494 loading class com/sun/tools/javac/code/Scope$1 done
+Event: 1.495 loading class com/sun/tools/javac/code/Type$ArrayType$1
+Event: 1.495 loading class com/sun/tools/javac/code/Type$ArrayType$1 done
+Event: 1.496 loading class java/io/DataInputStream
+Event: 1.498 loading class java/io/DataInputStream done
+Event: 1.499 loading class com/sun/tools/javac/code/TypeAnnotations$1
+Event: 1.499 loading class com/sun/tools/javac/code/TypeAnnotations$1 done
+Event: 1.500 loading class com/sun/tools/javac/code/TypeAnnotations$2
+Event: 1.500 loading class com/sun/tools/javac/code/TypeAnnotations$2 done
+Event: 1.501 loading class com/sun/tools/javac/code/SymbolMetadata
+Event: 1.501 loading class com/sun/tools/javac/code/SymbolMetadata done
+Event: 1.502 loading class com/sun/tools/javac/code/TypeAnnotations$TypeAnnotationPositions
+Event: 1.502 loading class com/sun/tools/javac/code/TypeAnnotations$TypeAnnotationPositions done
+Event: 1.505 loading class com/sun/tools/javac/main/JavaCompiler$2
+Event: 1.505 loading class com/sun/tools/javac/main/JavaCompiler$2 done
+Event: 1.507 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391fd289 sp=0x00007f50517a68d0
+Event: 1.507 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6648 mode 0
+Event: 1.515 Thread 0x00007f504804c800 DEOPT PACKING pc=0x00007f50391fc7a2 sp=0x00007f50517a6950
+Event: 1.515 Thread 0x00007f504804c800 DEOPT UNPACKING pc=0x00007f5039049fc4 sp=0x00007f50517a6708 mode 0
+Event: 1.527 loading class com/sun/tools/javac/comp/Check$Validator
+Event: 1.527 loading class com/sun/tools/javac/comp/Check$Validator done
+Event: 1.530 loading class com/sun/tools/javac/comp/Check$DefaultMethodClashFilter
+Event: 1.530 loading class com/sun/tools/javac/comp/Check$DefaultMethodClashFilter done
+Event: 1.531 loading class com/sun/tools/javac/code/Scope$CompoundScope$1
+Event: 1.531 loading class com/sun/tools/javac/code/Scope$CompoundScope$1 done
+Event: 1.531 loading class com/sun/tools/javac/code/Scope$CompoundScope$1$1
+Event: 1.531 loading class com/sun/tools/javac/code/Scope$CompoundScope$1$1 done
+Event: 1.532 loading class com/sun/tools/javac/code/Scope$CompoundScope$CompoundScopeIterator
+Event: 1.532 loading class com/sun/tools/javac/code/Scope$CompoundScope$CompoundScopeIterator done
+Event: 1.532 loading class com/sun/tools/javac/code/Scope$3
+Event: 1.532 loading class com/sun/tools/javac/code/Scope$3 done
+Event: 1.532 loading class com/sun/tools/javac/code/Scope$3$1
+Event: 1.532 loading class com/sun/tools/javac/code/Scope$3$1 done
+Event: 1.533 loading class com/sun/tools/javac/code/Types$27
+Event: 1.533 loading class com/sun/tools/javac/code/Types$27 done
+Event: 1.535 loading class com/sun/tools/javac/comp/Check$ClashFilter
+Event: 1.535 loading class com/sun/tools/javac/comp/Check$ClashFilter done
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$CompoundScope$2
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$CompoundScope$2 done
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$CompoundScope$2$1
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$CompoundScope$2$1 done
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$4
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$4 done
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$4$1
+Event: 1.536 loading class com/sun/tools/javac/code/Scope$4$1 done
+Event: 1.536 loading class com/sun/tools/javac/comp/Resolve$MethodResolutionContext
+Event: 1.536 loading class com/sun/tools/javac/comp/Resolve$MethodResolutionContext done
+Event: 1.538 loading class com/sun/tools/javac/comp/Resolve$InterfaceLookupPhase
+Event: 1.538 loading class com/sun/tools/javac/comp/Resolve$InterfaceLookupPhase done
+Event: 1.538 loading class com/sun/tools/javac/comp/Resolve$InterfaceLookupPhase$1
+Event: 1.538 loading class com/sun/tools/javac/comp/Resolve$InterfaceLookupPhase$1 done
+Event: 1.538 loading class com/sun/tools/javac/comp/Resolve$InterfaceLookupPhase$2
+Event: 1.538 loading class com/sun/tools/javac/comp/Resolve$InterfaceLookupPhase$2 done
+Event: 1.539 loading class com/sun/tools/javac/comp/Resolve$5
+Event: 1.539 loading class com/sun/tools/javac/comp/Resolve$5 done
+Event: 1.542 loading class com/sun/tools/javac/comp/Resolve$5$1
+Event: 1.542 loading class com/sun/tools/javac/comp/Resolve$5$1 done
+Event: 1.542 loading class com/sun/tools/javac/comp/Resolve$LookupFilter
+Event: 1.542 loading class com/sun/tools/javac/comp/Resolve$LookupFilter done
+Event: 1.542 loading class com/sun/tools/javac/comp/Resolve$MethodResolutionContext$Candidate
+Event: 1.542 loading class com/sun/tools/javac/comp/Resolve$MethodResolutionContext$Candidate done
+Event: 1.543 loading class java/util/Formatter
+Event: 1.545 loading class java/util/Formatter done
+Event: 1.545 loading class java/util/regex/Pattern$5
+Event: 1.545 loading class java/util/regex/Pattern$5 done
+Event: 1.545 loading class java/util/Locale$Category
+Event: 1.546 loading class java/util/Locale$Category done
+Event: 1.546 loading class java/util/Locale$1
+Event: 1.546 loading class java/util/Locale$1 done
+Event: 1.546 loading class java/util/Formatter$FixedString
+Event: 1.546 loading class java/util/Formatter$FormatString
+Event: 1.546 loading class java/util/Formatter$FormatString done
+Event: 1.546 loading class java/util/Formatter$FixedString done
+Event: 1.546 loading class java/util/Formatter$FormatSpecifier
+Event: 1.548 loading class java/util/Formatter$FormatSpecifier done
+Event: 1.548 loading class java/util/Formatter$Flags
+Event: 1.548 loading class java/util/Formatter$Flags done
+Event: 1.548 loading class java/util/Formatter$Conversion
+Event: 1.548 loading class java/util/Formatter$Conversion done
+Event: 1.549 loading class java/util/Formattable
+Event: 1.549 loading class java/util/Formattable done
+Event: 1.549 loading class com/sun/tools/javac/tree/JCTree$JCPolyExpression$PolyKind
+Event: 1.549 loading class com/sun/tools/javac/tree/JCTree$JCPolyExpression$PolyKind done
+Event: 1.549 loading class com/sun/tools/javac/code/Types$MembersClosureCache$MembersScope$1
+Event: 1.549 loading class com/sun/tools/javac/code/Types$MembersClosureCache$MembersScope$1 done
+Event: 1.550 loading class javax/lang/model/element/ElementKind
+Event: 1.551 loading class javax/lang/model/element/ElementKind done
+Event: 1.551 loading class com/sun/tools/javac/code/Flags
+Event: 1.551 loading class com/sun/tools/javac/code/Flags done
+Event: 1.552 loading class com/sun/tools/javac/comp/Resolve$4$2
+Event: 1.552 loading class com/sun/tools/javac/comp/Resolve$4$2 done
+Event: 1.553 loading class com/sun/tools/javac/comp/Resolve$MethodCheckContext
+Event: 1.553 loading class com/sun/tools/javac/comp/Resolve$MethodCheckContext done
+Event: 1.554 loading class com/sun/tools/javac/comp/Resolve$MethodCheckDiag
+Event: 1.554 loading class com/sun/tools/javac/comp/Resolve$MethodCheckDiag done
+Event: 1.555 loading class com/sun/tools/javac/code/Types$Subst
+Event: 1.555 loading class com/sun/tools/javac/code/Types$Subst done
+Event: 1.556 loading class com/sun/tools/javac/comp/Resolve$MostSpecificCheck
+Event: 1.556 loading class com/sun/tools/javac/comp/Resolve$MostSpecificCheck done
+Event: 1.556 loading class com/sun/tools/javac/comp/Resolve$MostSpecificCheck$MostSpecificCheckContext
+Event: 1.556 loading class com/sun/tools/javac/comp/Resolve$MostSpecificCheck$MostSpecificCheckContext done
+Event: 1.556 loading class com/sun/tools/javac/util/JCDiagnostic$DiagnosticType
+Event: 1.556 loading class com/sun/tools/javac/util/JCDiagnostic$DiagnosticType done
+Event: 1.559 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker
+Event: 1.559 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker done
+Event: 1.566 loading class com/sun/tools/javac/comp/DeferredAttr$FilterScanner
+Event: 1.566 loading class com/sun/tools/javac/comp/DeferredAttr$FilterScanner done
+Event: 1.567 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker$2
+Event: 1.567 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker$2 done
+Event: 1.567 loading class com/sun/tools/javac/comp/DeferredAttr$MethodAnalyzer
+Event: 1.567 loading class com/sun/tools/javac/comp/DeferredAttr$MethodAnalyzer done
+Event: 1.568 loading class com/sun/tools/javac/comp/DeferredAttr$FilterScanner$1
+Event: 1.568 loading class com/sun/tools/javac/comp/DeferredAttr$FilterScanner$1 done
+Event: 1.568 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker$1
+Event: 1.568 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker$1 done
+Event: 1.568 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker$3
+Event: 1.568 loading class com/sun/tools/javac/comp/DeferredAttr$DeferredChecker$3 done
+Event: 1.569 loading class com/sun/tools/javac/comp/DeferredAttr$ArgumentExpressionKind
+Event: 1.569 loading class com/sun/tools/javac/comp/DeferredAttr$ArgumentExpressionKind done
+Event: 1.577 loading class com/sun/tools/javac/comp/Attr$15
+Event: 1.577 loading class com/sun/tools/javac/comp/Attr$15 done
+Event: 1.580 loading class com/sun/source/tree/MemberReferenceTree$ReferenceMode
+Event: 1.580 loading class com/sun/source/tree/MemberReferenceTree$ReferenceMode done
+Event: 1.634 loading class com/sun/tools/javac/code/Types$ImplementationCache$Entry
+Event: 1.634 loading class com/sun/tools/javac/code/Types$ImplementationCache$Entry done
+Event: 1.636 loading class java/util/HashMap$KeySet
+Event: 1.638 loading class java/util/HashMap$KeySet done
+Event: 1.638 loading class java/util/HashMap$KeyIterator
+Event: 1.638 loading class java/util/HashMap$KeyIterator done
+Event: 1.638 loading class com/sun/tools/javac/comp/Flow$AliveAnalyzer
+Event: 1.638 loading class com/sun/tools/javac/comp/Flow$AliveAnalyzer done
+Event: 1.640 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer
+Event: 1.640 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer done
+Event: 1.641 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$JumpKind
+Event: 1.641 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$JumpKind done
+Event: 1.641 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$JumpKind$1
+Event: 1.641 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$JumpKind$1 done
+Event: 1.641 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$JumpKind$2
+Event: 1.641 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$JumpKind$2 done
+Event: 1.642 loading class com/sun/tools/javac/comp/Flow$AssignAnalyzer
+Event: 1.642 loading class com/sun/tools/javac/comp/Flow$AssignAnalyzer done
+Event: 1.643 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$PendingExit
+Event: 1.643 loading class com/sun/tools/javac/comp/Flow$BaseAnalyzer$PendingExit done
+Event: 1.643 loading class com/sun/tools/javac/comp/Flow$AssignAnalyzer$AssignPendingExit
+Event: 1.643 loading class com/sun/tools/javac/comp/Flow$AssignAnalyzer$AssignPendingExit done
+Event: 1.644 loading class com/sun/tools/javac/comp/Flow$FlowKind
+Event: 1.644 loading class com/sun/tools/javac/comp/Flow$FlowKind done
+Event: 1.644 loading class com/sun/tools/javac/util/Bits
+Event: 1.644 loading class com/sun/tools/javac/util/Bits done
+Event: 1.645 loading class com/sun/tools/javac/util/Bits$BitsState
+Event: 1.645 loading class com/sun/tools/javac/util/Bits$BitsState done
+Event: 1.646 loading class com/sun/tools/javac/util/Bits$1
+Event: 1.646 loading class com/sun/tools/javac/util/Bits$1 done
+Event: 1.646 loading class com/sun/tools/javac/comp/Flow$2
+Event: 1.646 loading class com/sun/tools/javac/comp/Flow$2 done
+Event: 1.647 loading class com/sun/tools/javac/comp/Flow$FlowAnalyzer
+Event: 1.647 loading class com/sun/tools/javac/comp/Flow$FlowAnalyzer done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 ca:01 5039064                            /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/bin/javac
+00600000-00601000 r--p 00000000 ca:01 5039064                            /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/bin/javac
+00601000-00602000 rw-p 00001000 ca:01 5039064                            /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/bin/javac
+009df000-00a00000 rw-p 00000000 00:00 0                                  [heap]
+f0a00000-f0de0000 rw-p 00000000 00:00 0 
+f0de0000-f5c00000 ---p 00000000 00:00 0 
+f5c00000-f63a6000 rw-p 00000000 00:00 0 
+f63a6000-100000000 ---p 00000000 00:00 0 
+100000000-100100000 rw-p 00000000 00:00 0 
+100100000-140000000 ---p 00000000 00:00 0 
+7f5010000000-7f5010021000 rw-p 00000000 00:00 0 
+7f5010021000-7f5014000000 ---p 00000000 00:00 0 
+7f5018000000-7f501893b000 rw-p 00000000 00:00 0 
+7f501893b000-7f501c000000 ---p 00000000 00:00 0 
+7f501c000000-7f501c407000 rw-p 00000000 00:00 0 
+7f501c407000-7f5020000000 ---p 00000000 00:00 0 
+7f5020000000-7f5020021000 rw-p 00000000 00:00 0 
+7f5020021000-7f5024000000 ---p 00000000 00:00 0 
+7f5025430000-7f502c000000 r--p 00000000 ca:01 13367887                   /usr/lib/locale/locale-archive
+7f502c000000-7f502c021000 rw-p 00000000 00:00 0 
+7f502c021000-7f5030000000 ---p 00000000 00:00 0 
+7f5030000000-7f5030021000 rw-p 00000000 00:00 0 
+7f5030021000-7f5034000000 ---p 00000000 00:00 0 
+7f5034000000-7f5034021000 rw-p 00000000 00:00 0 
+7f5034021000-7f5038000000 ---p 00000000 00:00 0 
+7f5039000000-7f5039270000 rwxp 00000000 00:00 0 
+7f5039270000-7f5048000000 ---p 00000000 00:00 0 
+7f5048000000-7f50483f0000 rw-p 00000000 00:00 0 
+7f50483f0000-7f504c000000 ---p 00000000 00:00 0 
+7f504cc56000-7f504ccd0000 r--s 012c3000 ca:01 215442                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/lib/tools.jar
+7f504ccd0000-7f504ccd1000 ---p 00000000 00:00 0 
+7f504ccd1000-7f504cdd1000 rw-p 00000000 00:00 0 
+7f504cdd1000-7f504cdd4000 ---p 00000000 00:00 0 
+7f504cdd4000-7f504ced2000 rw-p 00000000 00:00 0 
+7f504ced2000-7f504ced3000 ---p 00000000 00:00 0 
+7f504ced3000-7f504ced6000 ---p 00000000 00:00 0 
+7f504ced6000-7f504cfd3000 rw-p 00000000 00:00 0 
+7f504cfd3000-7f504cfd4000 ---p 00000000 00:00 0 
+7f504cfd4000-7f504cfd7000 ---p 00000000 00:00 0 
+7f504cfd7000-7f504d0d4000 rw-p 00000000 00:00 0 
+7f504d0d4000-7f504d0d7000 ---p 00000000 00:00 0 
+7f504d0d7000-7f504d1d5000 rw-p 00000000 00:00 0 
+7f504d1d5000-7f504d1d8000 ---p 00000000 00:00 0 
+7f504d1d8000-7f504d2d6000 rw-p 00000000 00:00 0 
+7f504d2d6000-7f504d2d9000 ---p 00000000 00:00 0 
+7f504d2d9000-7f504d3d7000 rw-p 00000000 00:00 0 
+7f504d3d7000-7f504d3d8000 ---p 00000000 00:00 0 
+7f504d3d8000-7f504d526000 rw-p 00000000 00:00 0 
+7f504d526000-7f504d6f6000 r--s 04445000 ca:01 8534666                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/rt.jar
+7f504d6f6000-7f504df87000 rw-p 00000000 00:00 0 
+7f504dfc7000-7f504dfcb000 rw-p 00000000 00:00 0 
+7f504dfcb000-7f504e01a000 ---p 00000000 00:00 0 
+7f504e01a000-7f504e024000 rw-p 00000000 00:00 0 
+7f504e024000-7f504e3da000 ---p 00000000 00:00 0 
+7f504e3da000-7f504e3e2000 r-xp 00000000 ca:01 12645281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7f504e3e2000-7f504e5e1000 ---p 00008000 ca:01 12645281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7f504e5e1000-7f504e5e2000 r--p 00007000 ca:01 12645281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7f504e5e2000-7f504e5e3000 rw-p 00008000 ca:01 12645281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libzip.so
+7f504e5e3000-7f504e5ee000 r-xp 00000000 ca:01 1397                       /usr/lib64/libnss_files-2.26.so
+7f504e5ee000-7f504e7ed000 ---p 0000b000 ca:01 1397                       /usr/lib64/libnss_files-2.26.so
+7f504e7ed000-7f504e7ee000 r--p 0000a000 ca:01 1397                       /usr/lib64/libnss_files-2.26.so
+7f504e7ee000-7f504e7ef000 rw-p 0000b000 ca:01 1397                       /usr/lib64/libnss_files-2.26.so
+7f504e7ef000-7f504e7f5000 rw-p 00000000 00:00 0 
+7f504e7f5000-7f504e7fd000 r-xp 00000000 ca:01 875712                     /usr/lib64/libnss_sss.so.2
+7f504e7fd000-7f504e9fc000 ---p 00008000 ca:01 875712                     /usr/lib64/libnss_sss.so.2
+7f504e9fc000-7f504e9fd000 r--p 00007000 ca:01 875712                     /usr/lib64/libnss_sss.so.2
+7f504e9fd000-7f504e9fe000 rw-p 00008000 ca:01 875712                     /usr/lib64/libnss_sss.so.2
+7f504e9fe000-7f504ea28000 r-xp 00000000 ca:01 12645199                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7f504ea28000-7f504ec27000 ---p 0002a000 ca:01 12645199                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7f504ec27000-7f504ec28000 r--p 00029000 ca:01 12645199                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7f504ec28000-7f504ec2a000 rw-p 0002a000 ca:01 12645199                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libjava.so
+7f504ec2a000-7f504ec37000 r-xp 00000000 ca:01 12645280                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7f504ec37000-7f504ee36000 ---p 0000d000 ca:01 12645280                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7f504ee36000-7f504ee38000 r--p 0000c000 ca:01 12645280                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7f504ee38000-7f504ee39000 rw-p 0000e000 ca:01 12645280                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/libverify.so
+7f504ee39000-7f504ee40000 r-xp 00000000 ca:01 1403                       /usr/lib64/librt-2.26.so
+7f504ee40000-7f504f03f000 ---p 00007000 ca:01 1403                       /usr/lib64/librt-2.26.so
+7f504f03f000-7f504f040000 r--p 00006000 ca:01 1403                       /usr/lib64/librt-2.26.so
+7f504f040000-7f504f041000 rw-p 00007000 ca:01 1403                       /usr/lib64/librt-2.26.so
+7f504f041000-7f504f057000 r-xp 00000000 ca:01 1366                       /usr/lib64/libgcc_s-7-20180303.so.1
+7f504f057000-7f504f256000 ---p 00016000 ca:01 1366                       /usr/lib64/libgcc_s-7-20180303.so.1
+7f504f256000-7f504f257000 r--p 00015000 ca:01 1366                       /usr/lib64/libgcc_s-7-20180303.so.1
+7f504f257000-7f504f258000 rw-p 00016000 ca:01 1366                       /usr/lib64/libgcc_s-7-20180303.so.1
+7f504f258000-7f504f3a2000 r-xp 00000000 ca:01 1387                       /usr/lib64/libm-2.26.so
+7f504f3a2000-7f504f5a1000 ---p 0014a000 ca:01 1387                       /usr/lib64/libm-2.26.so
+7f504f5a1000-7f504f5a2000 r--p 00149000 ca:01 1387                       /usr/lib64/libm-2.26.so
+7f504f5a2000-7f504f5a3000 rw-p 0014a000 ca:01 1387                       /usr/lib64/libm-2.26.so
+7f504f5a3000-7f504f71b000 r-xp 00000000 ca:01 217793                     /usr/lib64/libstdc++.so.6.0.24
+7f504f71b000-7f504f91b000 ---p 00178000 ca:01 217793                     /usr/lib64/libstdc++.so.6.0.24
+7f504f91b000-7f504f925000 r--p 00178000 ca:01 217793                     /usr/lib64/libstdc++.so.6.0.24
+7f504f925000-7f504f927000 rw-p 00182000 ca:01 217793                     /usr/lib64/libstdc++.so.6.0.24
+7f504f927000-7f504f92b000 rw-p 00000000 00:00 0 
+7f504f92b000-7f505069e000 r-xp 00000000 ca:01 8440406                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7f505069e000-7f505089d000 ---p 00d73000 ca:01 8440406                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7f505089d000-7f505093a000 r--p 00d72000 ca:01 8440406                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7f505093a000-7f5050964000 rw-p 00e0f000 ca:01 8440406                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/jre/lib/amd64/server/libjvm.so
+7f5050964000-7f5050994000 rw-p 00000000 00:00 0 
+7f5050994000-7f5050b41000 r-xp 00000000 ca:01 1381                       /usr/lib64/libc-2.26.so
+7f5050b41000-7f5050d40000 ---p 001ad000 ca:01 1381                       /usr/lib64/libc-2.26.so
+7f5050d40000-7f5050d44000 r--p 001ac000 ca:01 1381                       /usr/lib64/libc-2.26.so
+7f5050d44000-7f5050d46000 rw-p 001b0000 ca:01 1381                       /usr/lib64/libc-2.26.so
+7f5050d46000-7f5050d4a000 rw-p 00000000 00:00 0 
+7f5050d4a000-7f5050d4d000 r-xp 00000000 ca:01 1385                       /usr/lib64/libdl-2.26.so
+7f5050d4d000-7f5050f4c000 ---p 00003000 ca:01 1385                       /usr/lib64/libdl-2.26.so
+7f5050f4c000-7f5050f4d000 r--p 00002000 ca:01 1385                       /usr/lib64/libdl-2.26.so
+7f5050f4d000-7f5050f4e000 rw-p 00003000 ca:01 1385                       /usr/lib64/libdl-2.26.so
+7f5050f4e000-7f5050f5c000 r-xp 00000000 ca:01 8442996                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/lib/amd64/jli/libjli.so
+7f5050f5c000-7f505115b000 ---p 0000e000 ca:01 8442996                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/lib/amd64/jli/libjli.so
+7f505115b000-7f505115c000 r--p 0000d000 ca:01 8442996                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/lib/amd64/jli/libjli.so
+7f505115c000-7f505115d000 rw-p 0000e000 ca:01 8442996                    /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/lib/amd64/jli/libjli.so
+7f505115d000-7f5051171000 r-xp 00000000 ca:01 217814                     /usr/lib64/libz.so.1.2.7
+7f5051171000-7f5051371000 ---p 00014000 ca:01 217814                     /usr/lib64/libz.so.1.2.7
+7f5051371000-7f5051372000 r--p 00014000 ca:01 217814                     /usr/lib64/libz.so.1.2.7
+7f5051372000-7f5051373000 rw-p 00015000 ca:01 217814                     /usr/lib64/libz.so.1.2.7
+7f5051373000-7f505138c000 r-xp 00000000 ca:01 1399                       /usr/lib64/libpthread-2.26.so
+7f505138c000-7f505158b000 ---p 00019000 ca:01 1399                       /usr/lib64/libpthread-2.26.so
+7f505158b000-7f505158c000 r--p 00018000 ca:01 1399                       /usr/lib64/libpthread-2.26.so
+7f505158c000-7f505158d000 rw-p 00019000 ca:01 1399                       /usr/lib64/libpthread-2.26.so
+7f505158d000-7f5051591000 rw-p 00000000 00:00 0 
+7f5051591000-7f50515b6000 r-xp 00000000 ca:01 1374                       /usr/lib64/ld-2.26.so
+7f50515bb000-7f50515e5000 rw-p 00000000 00:00 0 
+7f50515e5000-7f505160c000 ---p 00000000 00:00 0 
+7f505160c000-7f5051610000 rw-p 00000000 00:00 0 
+7f5051610000-7f505165e000 ---p 00000000 00:00 0 
+7f505165e000-7f50516a0000 rw-p 00000000 00:00 0 
+7f50516a0000-7f50516a8000 rw-s 00000000 ca:01 12684544                   /tmp/hsperfdata_ec2-user/32173
+7f50516a8000-7f50516a9000 ---p 00000000 00:00 0 
+7f50516a9000-7f50516ac000 ---p 00000000 00:00 0 
+7f50516ac000-7f50517ad000 rw-p 00000000 00:00 0 
+7f50517b3000-7f50517b4000 rw-p 00000000 00:00 0 
+7f50517b4000-7f50517b5000 r--p 00000000 00:00 0 
+7f50517b5000-7f50517b6000 r--p 00024000 ca:01 1374                       /usr/lib64/ld-2.26.so
+7f50517b6000-7f50517b7000 rw-p 00025000 ca:01 1374                       /usr/lib64/ld-2.26.so
+7f50517b7000-7f50517b8000 rw-p 00000000 00:00 0 
+7ffef3cdc000-7ffef3cfd000 rw-p 00000000 00:00 0                          [stack]
+7ffef3d2d000-7ffef3d30000 r--p 00000000 00:00 0                          [vvar]
+7ffef3d30000-7ffef3d32000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dapplication.home=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64 -Xms8m 
+java_command: com.sun.tools.javac.Main Hello.java
+java_class_path (initial): /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/lib/tools.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64/classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.amzn2.0.1.x86_64
+PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xb71b60], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xb71b60], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x92d7a0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x92d650], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x92dcc0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Amazon Linux release 2 (Karoo)
+
+uname:Linux 4.14.138-114.102.amzn2.x86_64 #1 SMP Thu Aug 15 15:29:58 UTC 2019 x86_64
+libc:glibc 2.26 NPTL 2.26 
+rlimit: STACK 8192k, CORE 0k, NPROC 3794, NOFILE 4096, AS infinity
+load average:0.05 0.02 0.00
+
+/proc/meminfo:
+MemTotal:        1007332 kB
+MemFree:           54036 kB
+MemAvailable:          0 kB
+Buffers:               0 kB
+Cached:             7992 kB
+SwapCached:            0 kB
+Active:           887064 kB
+Inactive:           7312 kB
+Active(anon):     886580 kB
+Inactive(anon):      272 kB
+Active(file):        484 kB
+Inactive(file):     7040 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                72 kB
+Writeback:             0 kB
+AnonPages:        886432 kB
+Mapped:             5000 kB
+Shmem:               424 kB
+Slab:              36272 kB
+SReclaimable:      16252 kB
+SUnreclaim:        20020 kB
+KernelStack:        3628 kB
+PageTables:         7172 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      503664 kB
+Committed_AS:    1018844 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       88064 kB
+DirectMap2M:      960512 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0
+cpu_memory_nodes: 0
+active_processor_count: 1
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -1
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 916135936
+memory_max_usage_in_bytes: 0
+
+
+CPU:total 1 (initial active 1) (1 cores per cpu, 1 threads per core) family 6 model 63 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, tsc, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
+stepping	: 2
+microcode	: 0x43
+cpu MHz		: 2399.947
+cache size	: 30720 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology cpuid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm cpuid_fault invpcid_single pti fsgsbase bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs
+bogomips	: 4800.13
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 1007332k(53788k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.222-b10) for linux-amd64 JRE (1.8.0_222-b10), built on Aug 30 2019 18:31:05 by "mockbuild" with gcc 7.3.1 20180303 (Red Hat 7.3.1-5)
+
+time: Thu Sep 26 16:55:34 2019
+timezone: UTC
+elapsed time: 1 seconds (0d 0h 0m 1s)
+
